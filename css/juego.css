@@ -40,6 +40,8 @@ h4{
 }
 
 
+
+
 #menuToggle {
 
 	display: block;
@@ -163,7 +165,8 @@ h4{
 .contenedor-tablero {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-between;    
+    
 }
 
 .tablero {
@@ -202,31 +205,128 @@ h4{
 
 .jugador-info {
     display: flex;
-    /* justify-content: flex-end; */
     align-items: center;
     margin-top: 10px;
-
+    flex-direction: column;
+    margin-right: 100px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
     
+}
 
+.cambioFicha{
+    display: grid;
+    margin-left: 20px;
+    justify-items: center;
 }
 
 p {
-    
+    text-align: right; 
+    margin: 0; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 4px;
+}
+
+.namespan {
+    font-size: 15px;
     text-align: right; 
     margin: 0; 
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     color: #fff;
+    margin-top: 4px;
 }
- 
 
-a {
-    margin-left: 10px;
+.cambiar{
+    font-family: 'Montserrat';
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border: #fff 1px solid;
+    border-radius: 4px;
     text-decoration: none;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    padding: 5px 10px;
+    padding: 4px;
+    background: transparent;
+    color: #f4f5fe;
 }
+
+ 
+.cambiar:hover {
+    background-color: #fff4e3;
+    color: #2d2e49;
+}
+
+.valorName{
+    font-family: 'Montserrat';
+    font-size: 15px;
+    text-align: center;
+    margin: 9px;
+    color: #fff;
+
+}
+
+.inputValor{
+    font-family: 'Montserrat';
+    font-size: 9px;
+    text-align: center;
+    margin: 7px;
+    border: #fff 1px solid;
+    border-radius: 4px;
+    padding: 4px;
+    background: transparent;
+    color: #f4f5fe;
+    margin-top: 2px;
+}
+
+.inputValor::placeholder{
+    color: #fff;
+    opacity: 1; 
+}
+
+
+.inputValor:hover {
+    background-color: #2d2e49;
+    
+}
+
+input[type="text"] {
+    padding: 5px; 
+    font-size: 11px;
+    border-radius: 5px; 
+}
+
+.button {
+	width: 140px;
+	height: 32px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 8px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #fff;
+	background-color: transparent;
+	border: none;
+    border-radius: 30px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	/* opacity: 0.75; */
+    margin-top: 10px;
+}
+
+.button:hover {
+	background-color: #2d2e49;
+	color: #fff;
+	transform: translateY(-7px);
+}
+
+
+
 
 
 

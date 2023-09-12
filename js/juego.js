@@ -15,6 +15,7 @@ enlaceCambiarNombre1.addEventListener('click', () => abrirVentanaCambiarNombre(1
 const enlaceCambiarNombre2 = document.getElementById('cambiarNombre2');
 enlaceCambiarNombre2.addEventListener('click', () => abrirVentanaCambiarNombre(2));
 
+
 function obtenerNombe(){
     if (jugador1 !== null) {
         document.getElementById("jugadorName1").textContent = jugador1;
@@ -132,8 +133,11 @@ function mostrarMensajeGanador(jugador) {
     mensajeGanadorElement.style.display = "block";
 }
 
+
+
 const casillas = document.querySelectorAll('.casilla');
 casillas.forEach(casilla => {
+    
     jugadorNameActual = localStorage.getItem('jugadorNameActual');
     document.getElementById("jugadorName").textContent = jugadorNameActual;
     document.getElementById("turno").textContent = jugadorActual;
@@ -142,6 +146,8 @@ casillas.forEach(casilla => {
             const mensajeGanadorElement = document.getElementById("mensajeGanador");
             mensajeGanadorElement.style.display = "none";
             casilla.textContent = jugadorActual;
+            const botonAplicarCambios = document.getElementById('aplicarCambios');
+            botonAplicarCambios.addEventListener('click', cambiarValoresJugadores);
             verificarTriqui();
             if (verificarTriqui() === true) {
                 mostrarMensajeGanador(jugadorActual);
@@ -172,3 +178,34 @@ casillas.forEach(casilla => {
         }
     });
 });
+
+function cambiarValoresJugadores() {
+    const nuevoValorJugadorX = document.getElementById('nuevoJugadorX').value;
+    const nuevoValorJugadorO = document.getElementById('nuevoJugadorO').value;
+
+    // Verificar si los nuevos valores no son nulos ni cadenas vacías
+    if (nuevoValorJugadorX !== null && nuevoValorJugadorX.trim() !== "") {
+        jugadorX = nuevoValorJugadorX;
+    }
+
+    if (nuevoValorJugadorO !== null && nuevoValorJugadorO.trim() !== "") {
+        jugadorO = nuevoValorJugadorO;
+    }
+
+    // Actualizar las casillas con los nuevos valores
+    const casillas = document.querySelectorAll('.casilla');
+    casillas.forEach(casilla => {
+        if (casilla.textContent === "X") {
+            casilla.textContent = jugadorX;
+        } else if (casilla.textContent === "O") {
+            casilla.textContent = jugadorO;
+        }
+    });
+
+    // Actualizar el texto de las etiquetas con los nuevos valores
+    const etiquetaJugadorX = document.querySelector('label[for="nuevoJugadorX"]');
+    const etiquetaJugadorO = document.querySelector('label[for="nuevoJugadorO"]');
+    etiquetaJugadorX.textContent = `Nuevo Valor de ${jugadorX}:`;
+    etiquetaJugadorO.textContent = `Nuevo Valor de ${jugadorO}:`;
+}
+

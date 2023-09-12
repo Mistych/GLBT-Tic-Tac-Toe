@@ -19,7 +19,7 @@
           <span></span>
           <ul id="menu">
             <a href="../index.html"><li>Home</li></a>
-            <a href="#"><li>Puntuacion</li></a>
+            <a href="./puntuacion.html"><li>Puntuacion</li></a>
             <a href="./salida.html"><li>Salir</li></a>
           </ul>
         </div>
@@ -37,16 +37,17 @@
       </div>
       
       <div class="contenedor-tablero">
-        <div>
-            <div class="jugador-info">
-              <p>Jugador 1: <span id="jugadorName1"></span></p>
-              <a href="#" id="cambiarNombre1">Cambiar</a>
-            </div>
-            <div class="jugador-info">
-              <p>Jugador 2: <span id="jugadorName2"></span></p>
-              <a href="#" id="cambiarNombre2">Cambiar</a>
-            </div>
-          </div>
+        <div class="cambioFicha">
+            <label class="valorName" for="nuevoJugadorX">Valor de Jugador X</label>
+            <input class="inputValor" type="text" id="nuevoJugadorX" placeholder="Valor de Jugador X">
+            
+            <label class="valorName" for="nuevoJugadorO">Valor de Jugador O</label>
+            <input class="inputValor" type="text" id="nuevoJugadorO" placeholder="Valor de Jugador O">
+            
+            <button class="button" id="aplicarCambios">Aplicar Cambios</button>
+            
+        </div>
+        
         <div class="tablero">
           <div class="casilla" id="casilla1"></div>
           <div class="casilla" id="casilla2"></div>
@@ -58,10 +59,22 @@
           <div class="casilla" id="casilla8"></div>
           <div class="casilla" id="casilla9"></div>
         </div>
+
+        <div>
+            <div class="jugador-info">
+              <p>Jugador 1</p>
+              <span class="namespan" id="jugadorName1"></span>
+              <a class="cambiar" href="#" id="cambiarNombre1">Cambiar</a>
+            </div>
+            <div class="jugador-info">
+                <p>Jugador 2</p>
+                <span class="namespan" id="jugadorName2"></span>
+                <a class="cambiar" href="#" id="cambiarNombre2">Cambiar</a>
+              </div>
         
       </div>
-
-    <!-- <label for="nuevoJugadorX">Nuevo Valor de Jugador X:</label>
+<!-- 
+    <label for="nuevoJugadorX">Nuevo Valor de Jugador X:</label>
     <input type="text" id="nuevoJugadorX" placeholder="Nuevo Valor de Jugador X">
     
     <label for="nuevoJugadorO">Nuevo Valor de Jugador O:</label>
