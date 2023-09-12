@@ -19,7 +19,7 @@ img {
 	display: block;
 	max-width: 100%;
 }
-/* ======================== */
+
 .container {
 	max-width: 960px;
 	margin-inline: auto;
@@ -49,9 +49,9 @@ img {
 	display: flex;
 }
 .gallery-item a {
-    text-decoration: none; /* Elimina la subrayado del enlace */
-    color: inherit; /* Hereda el color del texto del contenedor */
-    display: block; /* Convierte el enlace en un bloque de nivel para ocupar espacio */
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
 }
 .gallery-item {
 	position: relative;

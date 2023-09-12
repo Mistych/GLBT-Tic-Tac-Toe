@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=icon href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/juego.css">
+    <title>Partida</title>
+</head>
+
+<body>
+
+    <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="../index.html"><li>Home</li></a>
+            <a href="#"><li>Puntuacion</li></a>
+            <a href="./salida.html"><li>Salir</li></a>
+          </ul>
+        </div>
+      </nav>
+    
+    <h1>Inicio de Partida</h1>
+    <h3>Turno de <span id="jugadorName"></span> Con <span id="turno"></span></h3>
+    <h4>Tablero</h4>
+    <div id="mensajeGanador" class="mensaje">
+        ¡Jugador <span id="jugadorName"></span> con <span id="jugadorGanador"></span> ha ganado!
+      </div>
+      <div id="mensajeGanador" class="mensaje">
+        ¡Jugador <span id="jugadorName"></span> con
+        <span id="jugadorGanador"></span> ha ganado!
+      </div>
+      
+      <div class="contenedor-tablero">
+        <div>
+            <div class="jugador-info">
+              <p>Jugador 1: <span id="jugadorName1"></span></p>
+              <a href="#" id="cambiarNombre1">Cambiar</a>
+            </div>
+            <div class="jugador-info">
+              <p>Jugador 2: <span id="jugadorName2"></span></p>
+              <a href="#" id="cambiarNombre2">Cambiar</a>
+            </div>
+          </div>
+        <div class="tablero">
+          <div class="casilla" id="casilla1"></div>
+          <div class="casilla" id="casilla2"></div>
+          <div class="casilla" id="casilla3"></div>
+          <div class="casilla" id="casilla4"></div>
+          <div class="casilla" id="casilla5"></div>
+          <div class="casilla" id="casilla6"></div>
+          <div class="casilla" id="casilla7"></div>
+          <div class="casilla" id="casilla8"></div>
+          <div class="casilla" id="casilla9"></div>
+        </div>
+        
+      </div>
+
+    <!-- <label for="nuevoJugadorX">Nuevo Valor de Jugador X:</label>
+    <input type="text" id="nuevoJugadorX" placeholder="Nuevo Valor de Jugador X">
+    
+    <label for="nuevoJugadorO">Nuevo Valor de Jugador O:</label>
+    <input type="text" id="nuevoJugadorO" placeholder="Nuevo Valor de Jugador O">
+    
+    <button id="aplicarCambios">Aplicar Cambios</button> -->
+
+    
+
+    <script src="../js/juego.js"></script>
+
+</body>
+
+</html>

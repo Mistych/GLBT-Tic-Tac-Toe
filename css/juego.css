@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap');
+
 body {
-	/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-	/* background: #e1ad69; */
-	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
@@ -20,101 +20,23 @@ h1 {
 	opacity: 0.9;
 }
 
-h2{
+h3 {
+    font-family: 'Montserrat';
+    text-align: center;
+    font-size: clamp(32px, 2.5vw, 16px);
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.75;
+    text-transform: capitalize;
+}
+
+h4{
 	font-family: 'Montserrat';
 	text-align: center;
 	font-size: clamp(19px, 2.5vw, 16px);
 	font-weight: 500;
 	color: #fff;
-	opacity: 0.75;
-}
-
-form{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-input{
-	width: 300px;
-	height: 30px;
-	margin: 10px;
-	border-radius: 5px;
-	border: none;
-	font-family: 'poppins';
-	opacity: calc(0.5 + 0.5 * (100 - 50) / 100);
-	text-align: center;
-}
-
-label{
-	font-family: 'Montserrat';
-	text-align: center;
-	font-size: clamp(19px, 2.5vw, 16px);
-	font-weight: 500;
-	color: #fff;
-	opacity: 0.75;
-}
-
-p{
-	font-family: 'Montserrat';
-	text-align: center;
-	font-size: clamp(19px, 2.5vw, 16px);
-	font-weight: 500;
-	color: #2d2e49;
-	opacity: 0.75;
-	text-transform: uppercase;
-	
-	
-}
-
-
-
-/* .image-button {
-	background-image: url('../img/ea-romania-news-article-generic-16x9.jpg.adapt.crop16x9.575p.jpg');
-	background-size: cover; 
-	color: #fff; 
-	padding: 15px 30px; 
-	border: none;
-	border-radius: 5px; 
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 10px 5px;
-	cursor: pointer;
-	transition: transform .8s;
-	
-}
-
-
-.image-button:hover{
-	transform: scale(1.3);
-} */
-
-.button {
-	width: 140px;
-	height: 45px;
-	font-family: 'poppins', sans-serif;
-	font-size: 11px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	color: #000;
-	background-color: #fff;
-	border: none;
-	border-radius: 45px;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	opacity: 0.75;
-}
-
-.button:hover {
-	background-color: #2d2e49;
-	color: #fff;
-	transform: translateY(-7px);
+	opacity: 0.9;
 }
 
 
@@ -217,7 +139,7 @@ p{
 	padding-top: 125px;
 	border-radius: 5px;
 	/* background: #e1ad69; */
-	background: transparent;
+    background: transparent;
 	list-style-type: none;
 	-webkit-font-smoothing: antialiased;
 	
@@ -238,17 +160,86 @@ p{
 	transform: none;
 }
 
+.contenedor-tablero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    width: 320px;
+    margin: 0 auto;
+    margin-top: 20px;
+    
+}
+
+.casilla {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Montserrat';
+}
+
+.mensaje {
+    display: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+.jugador-info {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+    margin-top: 10px;
+
+    
+
+}
+
+p {
+    
+    text-align: right; 
+    margin: 0; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    color: #fff;
+}
+ 
+
+a {
+    margin-left: 10px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
 
-	50% {
-		background-position: 100% 50%;
-	}
+    50% {
+        background-position: 100% 50%;
+    }
 
-	100% {
-		background-position: 0% 50%;
-	}
+    100% {
+        background-position: 0% 50%;
+    }
 }
