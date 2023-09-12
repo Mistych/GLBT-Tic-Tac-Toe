@@ -9,11 +9,52 @@ let jugadorNameActualO = jugador2;
 let puntajeX = 0;
 let puntajeO = 0;
 
+const botonReiniciar = document.getElementById('reiniciar');
+const botonSalir = document.getElementById('salir');
+
+function mostrarMensajeRendido() {
+    const puntajeReset = 0;
+    const mensajeRendido = document.getElementById('mensajeRendido');
+    mensajeRendido.style.display = 'block';
+    mensajeRendido.style.display = 'flex';
+    mensajeRendido.style.top = '50%';
+    mensajeRendido.style.transform = 'translateY(-50%)';
+    if (jugadorActual === jugadorX){
+        jugadorGanador = jugador2;
+        jugadorNameActual = jugadorNameActualX;
+    } else if (jugadorActual === jugadorO){
+        jugadorGanador = jugador1;
+        jugadorNameActual = jugadorNameActualO ;
+    }
+
+    localStorage.setItem('puntajeX', puntajeReset.toString());
+    localStorage.setItem('puntajeO', puntajeReset.toString());
+
+
+    mensajeRendido.textContent = `El jugador ${jugadorNameActual} se ha rendido. Gana el jugador ${jugadorGanador} `;
+}
+
+
+
+botonReiniciar.addEventListener('click', function () {
+    mostrarMensajeRendido();
+    setTimeout(function () {
+        window.location.href = '../index.html';
+    }, 4000);
+
+});
+
+botonSalir.addEventListener('click', function () {
+    window.location.href = 'salida.html';
+});
+
+
 const enlaceCambiarNombre1 = document.getElementById('cambiarNombre1');
 enlaceCambiarNombre1.addEventListener('click', () => abrirVentanaCambiarNombre(1));
 
 const enlaceCambiarNombre2 = document.getElementById('cambiarNombre2');
 enlaceCambiarNombre2.addEventListener('click', () => abrirVentanaCambiarNombre(2));
+
 
 
 function obtenerNombe(){
@@ -184,11 +225,11 @@ function cambiarValoresJugadores() {
     const nuevoValorJugadorO = document.getElementById('nuevoJugadorO').value;
 
     // Verificar si los nuevos valores no son nulos ni cadenas vacías
-    if (nuevoValorJugadorX !== null && nuevoValorJugadorX.trim() !== "") {
+    if (nuevoValorJugadorX !== null && nuevoValorJugadorX.trim() !== "" && nuevoValorJugadorX.length === 1) {
         jugadorX = nuevoValorJugadorX;
     }
 
-    if (nuevoValorJugadorO !== null && nuevoValorJugadorO.trim() !== "") {
+    if (nuevoValorJugadorO !== null && nuevoValorJugadorO.trim() !== "" && nuevoValorJugadorO.length === 1) {
         jugadorO = nuevoValorJugadorO;
     }
 
@@ -208,4 +249,7 @@ function cambiarValoresJugadores() {
     etiquetaJugadorX.textContent = `Nuevo Valor de ${jugadorX}:`;
     etiquetaJugadorO.textContent = `Nuevo Valor de ${jugadorO}:`;
 }
+
+
+
 
